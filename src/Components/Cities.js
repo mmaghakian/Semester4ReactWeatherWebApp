@@ -29,7 +29,7 @@ export default class Cities extends Component {
             search: cityName
 
         }, () => {
-            console.log(this.state.search)
+            
             this.getData();
         });
 
@@ -46,7 +46,7 @@ export default class Cities extends Component {
     );
 
     getData = () => {
-        console.log(this.state.search)
+       
         fetch(url + this.state.search + urlend + "7416d767b84b00771ab75affc3604a16")
             .then(res => res.json())
             .then((result) => {
@@ -67,7 +67,7 @@ export default class Cities extends Component {
                 console.error('Error:', error);
             })
             .finally(() => {
-                console.log("done. ")
+                console.log("data retrieved")
 
             });
     }
