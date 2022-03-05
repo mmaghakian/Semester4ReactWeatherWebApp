@@ -23,7 +23,7 @@ export const Nav_Bar = ({ recentlyViewed }) => {
                             width="30"
                             height="30"
                             className="d-inline-flex align-top my-auto"
-                            alt="React Bootstrap logo"
+                            alt="icon"
                         /></NavLink>
                     <NavLink id="navText" href="/">
                         Home

@@ -40,14 +40,14 @@ export const GetCity = ({ givenID }) => {
     })
     async function getData() {
 
-        await fetch('http://api.openweathermap.org/data/2.5/weather?id=' + searchID + '&units=metric&appid=7416d767b84b00771ab75affc3604a16')
+        await fetch('http://api.openweathermap.org/data/2.5/weather?id=' + searchID + '&units=metric&appid=f0f1e6f7f6824da981e9548227f69820')
             .then(res => res.json())
             .then(result => {
                 if (result.cod === 200) {
                     setFlagURL("http://openweathermap.org/images/flags/" + (result.sys.country).toLowerCase() + ".png");
                     setCity(result);
-                    setPending(false);
                 }
+                setPending(false);
             }).catch((error) => {
                 console.error('Error:', error);
             });

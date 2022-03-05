@@ -45,10 +45,11 @@ const header_items = (
       <br />
       <span style={{ fontSize: '80%' }}>{getDate(new Date())} | Accessed at {startTime()}</span>
       <br></br>
-
+      <big>Weather in your city</big>
       {" "}
 
     </Container>
+
   </header>
 );
 

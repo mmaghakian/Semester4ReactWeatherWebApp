@@ -10,7 +10,7 @@ import Cities from "./Components/Cities";
 import { Nav_Bar } from './Components/Nav_Bar'
 import { Component } from 'react';
 
-const recentMAX = 10;
+const recentMAX = 5;
 
 export class App extends Component {
 
@@ -26,8 +26,7 @@ export class App extends Component {
         const storage = window.localStorage.getItem('weather-recents');
         if (storage !== null)
             this.setState({
-                recentlyViewed: JSON.parse("[" + storage + "]"),
-                ready: true
+                recentlyViewed: JSON.parse("[" + storage + "]")
             }, () => {
                 return;
             });

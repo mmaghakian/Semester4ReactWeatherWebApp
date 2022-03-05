@@ -29,7 +29,7 @@ export default class Cities extends Component {
             search: cityName
 
         }, () => {
-            
+
             this.getData();
         });
 
@@ -46,7 +46,7 @@ export default class Cities extends Component {
     );
 
     getData = () => {
-       
+
         fetch(url + this.state.search + urlend + "7416d767b84b00771ab75affc3604a16")
             .then(res => res.json())
             .then((result) => {
@@ -55,12 +55,17 @@ export default class Cities extends Component {
                 }
                 const { list } = result;
                 var _cards = [];
+                var individuals = [];
                 for (let i = 0; i < list.length; ++i) {
-                    _cards.push(list[i]);
+                    console.log(individuals)
+                    if (!individuals.includes(list[i].name + list[i].sys.country)) {
+                        individuals.push(list[i].name + list[i].sys.country)
+                        _cards.push(list[i]);
+                    }
                 }
                 this.setState({
                     loading: false,
-                    cards: list,
+                    cards: _cards,
                     done: true,
                 });
             }).catch((error) => {
@@ -73,7 +78,6 @@ export default class Cities extends Component {
     }
     componentDidMount = () => {
         if (this.props.search === undefined) {
-
             return null;
         }
         else {

@@ -101,7 +101,9 @@ export const Cards = ({ cards, loading, addToRecents }) => {
 
     let toShow = [];
     for (let i = 0; i < cards.length; i++) {
+
         toShow.push(<GetCard data={cards[i]} addToRecents={addToRecents} />);
+
     }
     return (
         <>{toShow}</>
