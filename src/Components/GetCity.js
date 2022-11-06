@@ -40,7 +40,7 @@ export const GetCity = ({ givenID }) => {
     })
     async function getData() {
 
-        await fetch('http://api.openweathermap.org/data/2.5/weather?id=' + searchID + '&units=metric&appid=f0f1e6f7f6824da981e9548227f69820')
+        await fetch('http://api.openweathermap.org/data/2.5/weather?id=' + searchID + '&units=metric&appid=[APPID]')
             .then(res => res.json())
             .then(result => {
                 if (result.cod === 200) {
